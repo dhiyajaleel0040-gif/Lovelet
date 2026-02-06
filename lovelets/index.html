@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovelet - Premium Baby Products</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Great+Vibes&family=Pacifico&family=Poppins:wght@300;400;500;600&family=Nunito:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header injected via components.js -->
+    <header></header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h1>Everything Your <span class="highlight">Little One</span> Needs</h1>
+                <p>Premium quality clothes, toys, and care products wrapped in love. Soft, safe, and adorable.</p>
+                <a href="#shop" class="btn btn-primary">Shop Now</a>
+            </div>
+            <div class="hero-image">
+                <!-- Using a cute placeholder/SVG representation until real images are added -->
+                <div class="teddy-bear-icon">🧸</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories section-padding">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <a href="clothing.html" class="cat-card">
+                    <div class="icon-circle" style="background-color: var(--color-blue-light);"><i
+                            class="fa-solid fa-shirt"></i></div>
+                    <h3>Clothing</h3>
+                </a>
+                <a href="toys.html" class="cat-card">
+                    <div class="icon-circle" style="background-color: var(--color-pink-light);"><i
+                            class="fa-solid fa-shapes"></i></div>
+                    <h3>Toys</h3>
+                </a>
+                <a href="care.html" class="cat-card">
+                    <div class="icon-circle" style="background-color: var(--color-cream);"><i
+                            class="fa-solid fa-pump-soap"></i></div>
+                    <h3>Care</h3>
+                </a>
+                <a href="bathing.html" class="cat-card">
+                    <div class="icon-circle" style="background-color: var(--color-lavender);"><i
+                            class="fa-solid fa-bath"></i></div>
+                    <h3>Bathing</h3>
+                </a>
+                <a href="feeding.html" class="cat-card">
+                    <div class="icon-circle" style="background-color: var(--color-blue-light);"><i
+                            class="fa-solid fa-cookie-bite"></i></div>
+                    <h3>Feeding</h3>
+                </a>
+                <a href="nursery.html" class="cat-card">
+                    <div class="icon-circle" style="background-color: var(--color-pink-light);"><i
+                            class="fa-solid fa-bed"></i></div>
+                    <h3>Nursery</h3>
+                </a>
+                <a href="travel.html" class="cat-card">
+                    <div class="icon-circle" style="background-color: var(--color-cream);"><i
+                            class="fa-solid fa-car-side"></i></div>
+                    <h3>Travel</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products (Mockup) -->
+    <section class="featured section-padding" style="background-color: var(--color-cream);">
+        <div class="container">
+            <h2 class="section-title">Mom's Choice <i class="fa-solid fa-heart" style="color: var(--color-pink);"></i>
+            </h2>
+            <div class="product-grid">
+                <!-- Products are loaded dynamically from products-data.js (Featured items) -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer injected via components.js -->
+    <footer></footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

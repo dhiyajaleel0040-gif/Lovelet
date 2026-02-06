@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products - Lovelets</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        .admin-container {
+            max-width: 800px;
+            margin: 120px auto 60px;
+            padding: 40px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--color-blue-dark);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .img-toggle {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .img-toggle button {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--color-blue);
+            background: transparent;
+            color: var(--color-blue);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .img-toggle button.active {
+            background: var(--color-blue);
+            color: white;
+        }
+
+        #file-input-container {
+            display: none;
+        }
+
+        .preview-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #img-preview {
+            max-width: 200px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .added-products {
+            margin-top: 50px;
+            border-top: 2px dashed #eee;
+            padding-top: 30px;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .product-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .delete-btn {
+            margin-left: auto;
+            color: #ff4444;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">Lovelets</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="clothing.html">Clothing</a></li>
+                <li><a href="toys.html">Toys</a></li>
+                <li><a href="travel.html">Travel</a></li>
+                <li><a href="care.html">Care</a></li>
+                <li><a href="bathing.html">Bathing</a></li>
+                <li><a href="feeding.html">Feeding</a></li>
+                <li><a href="nursery.html">Nursery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="admin-container">
+            <h2 class="section-title">Add New Product</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #666;">Add items from your computer or other
+                websites.</p>
+
+            <form id="add-product-form">
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" id="p-name" placeholder="e.g. Organic Baby Onesie" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="p-category" required>
+                        <option value="clothing">Clothing</option>
+                        <option value="toys">Toys & Gifts</option>
+                        <option value="travel">Travel</option>
+                        <option value="care">Baby Care</option>
+                        <option value="bathing">Bathing</option>
+                        <option value="feeding">Feeding</option>
+                        <option value="nursery">Nursery</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Price ($)</label>
+                    <input type="text" id="p-price" placeholder="e.g. 29.00" required>
+                </div>
+
+                <label
+                    style="font-weight: 600; color: var(--color-blue-dark); display: block; margin-bottom: 10px;">Product
+                    Image</label>
+                <div class="img-toggle">
+                    <button type="button" id="btn-url" class="active">From Link (URL)</button>
+                    <button type="button" id="btn-file">From Albums</button>
+                </div>
+
+                <div id="url-input-container" class="form-group">
+                    <input type="url" id="p-url" placeholder="https://example.com/image.jpg">
+                </div>
+
+                <div id="file-input-container" class="form-group">
+                    <input type="file" id="p-file" accept="image/*">
+                </div>
+
+                <div class="preview-container">
+                    <img id="img-preview" alt="Preview">
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">Add Product to Site</button>
+            </form>
+
+            <div class="added-products">
+                <h3 style="color: var(--color-blue-dark); margin-bottom: 20px;">Currently Added Items</h3>
+                <div id="products-list">
+                    <!-- Added products will appear here -->
+                </div>
+                <button id="clear-all" class="btn btn-outline" style="margin-top: 20px; font-size: 0.8rem;">Clear All
+                    Custom Products</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom" style="text-align: center; padding: 20px; border-top: 1px solid #eee;">
+            <p>&copy; 2026 Lovelets. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Admin specific logic
+        const form = document.getElementById('add-product-form');
+        const btnUrl = document.getElementById('btn-url');
+        const btnFile = document.getElementById('btn-file');
+        const urlContainer = document.getElementById('url-input-container');
+        const fileContainer = document.getElementById('file-input-container');
+        const urlInput = document.getElementById('p-url');
+        const fileInput = document.getElementById('p-file');
+        const preview = document.getElementById('img-preview');
+        const productsList = document.getElementById('products-list');
+        const clearBtn = document.getElementById('clear-all');
+
+        let currentImgSource = 'url';
+        let base64Image = '';
+
+        // Toggle Source
+        btnUrl.onclick = () => {
+            currentImgSource = 'url';
+            btnUrl.classList.add('active');
+            btnFile.classList.remove('active');
+            urlContainer.style.display = 'block';
+            fileContainer.style.display = 'none';
+            preview.style.display = 'none';
+        }
+
+        btnFile.onclick = () => {
+            currentImgSource = 'file';
+            btnFile.classList.add('active');
+            btnUrl.classList.remove('active');
+            fileContainer.style.display = 'block';
+            urlContainer.style.display = 'none';
+            if (base64Image) preview.style.display = 'block';
+        }
+
+        // Preview File
+        fileInput.onchange = (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    base64Image = event.target.result;
+                    preview.src = base64Image;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        };
+
+        // Load existing
+        function loadAdminList() {
+            const products = JSON.parse(localStorage.getItem('lovelets_custom_products') || '[]');
+            productsList.innerHTML = products.length ? '' : '<p style="color: #999; font-style: italic;">No custom products added yet.</p>';
+            products.forEach((p, index) => {
+                const item = document.createElement('div');
+                item.className = 'product-item';
+                item.innerHTML = `
+                    <img src="${p.image}" alt="${p.name}">
+                    <div>
+                        <strong>${p.name}</strong><br>
+                        <small>${p.category.toUpperCase()} - $${p.price}</small>
+                    </div>
+                    <i class="fa-solid fa-trash delete-btn" onclick="deleteProduct(${index})"></i>
+                `;
+                productsList.appendChild(item);
+            });
+        }
+
+        window.deleteProduct = (index) => {
+            const products = JSON.parse(localStorage.getItem('lovelets_custom_products') || '[]');
+            products.splice(index, 1);
+            localStorage.setItem('lovelets_custom_products', JSON.stringify(products));
+            loadAdminList();
+        }
+
+        clearBtn.onclick = () => {
+            localStorage.removeItem('lovelets_custom_products');
+            loadAdminList();
+        }
+
+        // Handle Submit
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            const name = document.getElementById('p-name').value;
+            const category = document.getElementById('p-category').value;
+            const price = document.getElementById('p-price').value;
+            const image = currentImgSource === 'url' ? urlInput.value : base64Image;
+
+            if (!image) {
+                alert('Please provide an image URL or upload a file.');
+                return;
+            }
+
+            const products = JSON.parse(localStorage.getItem('lovelets_custom_products') || '[]');
+            products.push({ name, category, price, image });
+            localStorage.setItem('lovelets_custom_products', JSON.stringify(products));
+
+            form.reset();
+            preview.style.display = 'none';
+            base64Image = '';
+            loadAdminList();
+            alert('Product added successfully!');
+        };
+
+        loadAdminList();
+    </script>
+</body>
+
+</html>
