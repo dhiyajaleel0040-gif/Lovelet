@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baby Clothing - Lovelet Baby Store</title>
+    <title>Your Wishlist - Lovelet Baby Store</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,28 +26,29 @@
     <!-- Page Hero -->
     <section class="hero" style="padding: 40px 0;">
         <div class="decoration-container">
-            <div class="cute-point cute-cloud" style="top: 10%; left: 5%;"></div>
-            <div class="cute-point cute-star" style="top: 15%; right: 15%;"><i class="fa-solid fa-star"></i></div>
-            <div class="cute-point cute-heart" style="top: 40%; right: 5%;"><i class="fa-solid fa-heart"></i></div>
+            <div class="cute-point cute-cloud" style="top: 10%; left: 10%;"></div>
+            <div class="cute-point cute-star" style="bottom: 15%; right: 15%;"><i class="fa-solid fa-star"></i></div>
+            <div class="cute-point cute-heart" style="top: 30%; right: 5%;"><i class="fa-solid fa-heart"></i></div>
         </div>
         <div class="container hero-container">
             <div class="hero-text" style="text-align: center; max-width: 100%;">
-                <h1>Adorable <span class="highlight">Clothing</span> for Tiny Humans</h1>
-                <p>Soft, organic, and stylish outfits designed for comfort and play. From sleepsuits to everyday
-                    essentials.</p>
+                <h1>Your <span class="highlight">Little Favorites</span></h1>
+                <p>All the cute things you've saved for your precious one. ✨</p>
             </div>
         </div>
     </section>
 
-    <!-- Clothing Products -->
+    <!-- Wishlist Products -->
     <section class="featured section-padding">
         <div class="container">
-            <h2 class="section-title">Baby Clothing <i class="fa-solid fa-shirt" style="color: var(--color-pink);"></i>
+            <h2 class="section-title">My Wishlist <i class="fa-solid fa-heart" style="color: var(--color-pink);"></i>
             </h2>
-            <div class="product-grid">
-
-                <!-- Products are loaded dynamically from products-data.js -->
-
+            <div id="wishlist-grid" class="product-grid">
+                <!-- Wishlist items will be loaded here -->
+            </div>
+            <div id="empty-wishlist" style="display: none; text-align: center; padding: 40px;">
+                <p style="font-size: 1.2rem; color: #999;">Your wishlist is empty. Start saving some cute things!</p>
+                <a href="index.html" class="btn btn-primary" style="margin-top: 20px;">Start Shopping</a>
             </div>
         </div>
     </section>

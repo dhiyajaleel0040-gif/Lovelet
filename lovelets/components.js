@@ -1,6 +1,47 @@
 export function initSharedComponents() {
     renderHeader();
     renderFooter();
+    renderCartDrawer();
+}
+
+function renderCartDrawer() {
+    // Check if drawer already exists to avoid duplicates
+    if (document.getElementById('cart-drawer')) return;
+
+    const drawer = document.createElement('div');
+    drawer.innerHTML = `
+        <div class="cart-overlay" id="cart-overlay"></div>
+        <div class="cart-drawer" id="cart-drawer">
+            <div class="cart-header">
+                <h2>Your Tiny Cart 🛒</h2>
+                <button class="close-cart" id="close-cart">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="cart-items" id="cart-items-container">
+                <!-- Cart items will be injected here -->
+                <div class="empty-cart-msg">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <p>Your cart is empty! <br> Let's find some cute things.</p>
+                </div>
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-amount">$0.00</span>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; border-radius: 12px; font-weight: 700;">
+                    Checkout Now ✨
+                </button>
+                <div style="text-align: center; margin-top: 15px; font-size: 0.8rem; color: var(--color-text-light);">
+                    <i class="fa-solid fa-lock"></i> Secure Checkout
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(drawer);
 }
 
 function renderHeader() {
@@ -24,11 +65,14 @@ function renderHeader() {
             </div>
 
             <div class="user-actions">
-                <a href="#" class="icon-btn"><i class="fa-regular fa-heart"></i></a>
+                <a href="wishlist.html" class="icon-btn wishlist-btn">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge wishlist-badge">0</span>
+                </a>
                 <a href="#" class="icon-btn"><i class="fa-regular fa-user"></i></a>
                 <a href="#" class="icon-btn cart-btn">
                     <i class="fa-solid fa-basket-shopping"></i>
-                    <span class="badge">0</span>
+                    <span class="badge cart-badge">0</span>
                 </a>
             </div>
         </div>

@@ -157,6 +157,11 @@
                     <input type="text" id="p-price" placeholder="e.g. 29.00" required>
                 </div>
 
+                <div class="form-group">
+                    <label>Short Description</label>
+                    <input type="text" id="p-desc" placeholder="e.g. Ultra-soft 100% organic cotton..." required>
+                </div>
+
                 <label
                     style="font-weight: 600; color: var(--color-blue-dark); display: block; margin-bottom: 10px;">Product
                     Image</label>
@@ -284,6 +289,7 @@
             const name = document.getElementById('p-name').value;
             const category = document.getElementById('p-category').value;
             const price = document.getElementById('p-price').value;
+            const description = document.getElementById('p-desc').value;
             const image = currentImgSource === 'url' ? urlInput.value : base64Image;
 
             if (!image) {
@@ -292,7 +298,8 @@
             }
 
             const products = JSON.parse(localStorage.getItem('lovelets_custom_products') || '[]');
-            products.push({ name, category, price, image });
+            const id = 'custom-' + Date.now();
+            products.push({ id, name, category, price, description, image });
             localStorage.setItem('lovelets_custom_products', JSON.stringify(products));
 
             form.reset();
