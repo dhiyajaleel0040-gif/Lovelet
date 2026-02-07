@@ -1,0 +1,209 @@
+plan.md — Lovelet
+1. Project Overview
+
+Website Name: Lovelet
+Purpose: A premium e-commerce platform selling all types of baby products including clothing, toys, skincare, feeding essentials, nursery furniture, travel items, and gift kits.
+Target Audience: Parents, expecting mothers, families, and gift buyers.
+Goal: Build a cute, elegant, and trusted one-stop baby shopping platform.
+
+2. Branding & Design
+Color Theme
+
+Soft Pink (#FFC0CB)
+
+Light Baby Blue (#BFE7FF)
+
+Cream White (#FFF8F2)
+
+Pastel Lavender (accent)
+
+Fonts
+
+Logo: Pacifico / Baloo / Great Vibes
+
+Website Text: Poppins / Nunito
+
+Theme Style
+
+Cute pastel UI
+
+Rounded corners
+
+Soft shadows
+
+Cartoon icons (teddy, stars, clouds)
+
+3. Product Categories
+3.1 Clothing
+
+Newborn sets
+
+Dresses & frocks
+
+Rompers
+
+Nightwear
+
+Winter wear
+
+Shoes, socks, caps
+
+3.2 Toys & Gifts
+
+Soft toys / teddies
+
+Educational toys
+
+Musical toys
+
+Activity toys
+
+Gift hampers
+
+3.3 Baby Care
+
+Diapers
+
+Wipes
+
+Lotions & creams
+
+Oils & powders
+
+Health kits
+
+3.4 Bathing
+
+Baby soap & shampoo
+
+Bath tubs
+
+Towels
+
+Grooming kits
+
+3.5 Feeding & Nutrition
+
+Feeding bottles
+
+Breast pumps
+
+Baby bowls & spoons
+
+Organic baby foods
+
+Snacks
+
+3.6 Nursery & Furniture
+
+Cribs
+
+Mattresses
+
+Bedding sets
+
+Changing tables
+
+Nursery décor
+
+3.7 Travel Essentials
+
+Strollers
+
+Baby carriers
+
+Car seats
+
+Diaper bags
+
+4. Core Website Features
+
+User login & registration
+
+Wishlist
+
+Shopping cart & secure checkout
+
+Order tracking
+
+Reviews & ratings
+
+Product filters (age, size, price)
+
+5. Advanced Features
+
+Age-based shopping assistant
+
+Bundle builder (Newborn starter kits)
+
+Subscription system (diapers / wipes)
+
+AI product recommendations
+
+Personalized gift wrapping
+
+360° product preview
+
+AR crib / stroller preview
+
+6. Homepage Sections
+
+Hero banner
+
+Shop by Age
+
+Trending Products
+
+Clothing Collections
+
+Mom’s Choice Products
+
+Subscription Essentials
+
+Parenting Tips Blog
+
+Customer Photo Reviews
+
+7. Admin Panel
+
+Product management
+
+Inventory management
+
+Order management
+
+Discount & coupon system
+
+Sales analytics dashboard
+
+8. Revenue Strategies
+
+Combo product bundles
+
+Subscription services
+
+Festival gift collections
+
+Loyalty reward points
+
+Referral discounts
+
+9. Technology Stack
+
+Frontend: HTML, CSS, JavaScript / React
+Backend: Node.js / Django
+Database: MySQL / MongoDB
+Payments: Razorpay / Stripe
+Hosting: Vercel / AWS / Netlify
+
+10. Future Expansion
+
+AI parenting assistant chatbot
+
+Baby registry system
+
+Nursery room planner
+
+Same-day delivery services
+
+Personalized baby growth product suggestions
