@@ -700,6 +700,19 @@ footer {
 
 /* Responsive */
 @media (max-width: 991px) {
+    .header-content {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+
+    .search-bar {
+        flex: 0 0 100%;
+        order: 3;
+        margin-top: 15px;
+        display: flex;
+        /* Ensure it's visible */
+    }
+
     .menu-toggle {
         display: block;
     }
@@ -731,11 +744,6 @@ footer {
 
     .main-nav a {
         font-size: 1.2rem;
-    }
-
-    .search-bar {
-        display: none;
-        /* Hide search bar on tablets/mobile header to save space */
     }
 }
 
