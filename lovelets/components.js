@@ -2,6 +2,23 @@ export function initSharedComponents() {
     renderHeader();
     renderFooter();
     renderCartDrawer();
+    renderImageModal();
+}
+
+function renderImageModal() {
+    if (document.getElementById('image-modal')) return;
+
+    const modal = document.createElement('div');
+    modal.id = 'image-modal';
+    modal.className = 'image-modal';
+    modal.innerHTML = `
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <img id="modal-image" src="" alt="Full size product">
+        </div>
+    `;
+    document.body.appendChild(modal);
 }
 
 function renderCartDrawer() {
@@ -60,8 +77,9 @@ function renderHeader() {
             </div>
 
             <div class="search-bar">
-                <input type="text" placeholder="Search for tiny things...">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text" id="search-input" placeholder="Search for tiny things...">
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div id="search-suggestions" class="search-suggestions"></div>
             </div>
 
             <div class="user-actions">
@@ -74,10 +92,13 @@ function renderHeader() {
                     <i class="fa-solid fa-basket-shopping"></i>
                     <span class="badge cart-badge">0</span>
                 </a>
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
 
-        <nav class="main-nav">
+        <nav class="main-nav" id="main-nav">
             <div class="container">
                 <ul>
                     <li><a href="index.html">Home</a></li>
