@@ -47,7 +47,7 @@ function renderCartDrawer() {
             <div class="cart-footer">
                 <div class="cart-total">
                     <span>Total:</span>
-                    <span id="cart-total-amount">$0.00</span>
+                    <span id="cart-total-amount">₹0</span>
                 </div>
                 <button class="btn btn-primary" style="width: 100%; border-radius: 12px; font-weight: 700;">
                     Checkout Now ✨
@@ -69,7 +69,7 @@ function renderHeader() {
     header.className = 'main-header';
     header.innerHTML = `
         <div class="top-bar">
-            <span>Only pure love for your little one 👶✨ | Free Shipping on Orders over $100</span>
+            <span>Only pure love for your little one 👶✨ | Free Shipping on Orders over ₹8,000</span>
         </div>
         <div class="header-content container">
             <div class="logo">

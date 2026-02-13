@@ -153,7 +153,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Price ($)</label>
+                    <label>Price (₹)</label>
                     <input type="text" id="p-price" placeholder="e.g. 29.00" required>
                 </div>
 
@@ -263,7 +263,7 @@
                     <img src="${p.image}" alt="${p.name}">
                     <div>
                         <strong>${p.name}</strong><br>
-                        <small>${p.category.toUpperCase()} - $${p.price}</small>
+                        <small>${p.category.toUpperCase()} - ₹${p.price}</small>
                     </div>
                     <i class="fa-solid fa-trash delete-btn" onclick="deleteProduct(${index})"></i>
                 `;
@@ -288,7 +288,7 @@
             e.preventDefault();
             const name = document.getElementById('p-name').value;
             const category = document.getElementById('p-category').value;
-            const price = document.getElementById('p-price').value;
+            const price = document.getElementById('p-price').value; // Price entered in INR
             const description = document.getElementById('p-desc').value;
             const image = currentImgSource === 'url' ? urlInput.value : base64Image;
 

@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="rating">
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <p class="price">$${p.price}</p>
+                <p class="price">${formatPrice(p.price)}</p>
                 <div style="position: relative;">
                     <button class="btn btn-sm">Add to Cart</button>
                     <!-- Heart pop element -->
@@ -574,7 +574,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>Your cart is empty! <br> Let's find some cute things.</p>
                 </div>
             `;
-            cartTotalAmount.innerText = '$0.00';
+            cartTotalAmount.innerText = formatPrice(0);
             return;
         }
 
@@ -601,7 +601,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cartItemsContainer.appendChild(itemEl);
         });
 
-        cartTotalAmount.innerText = `$${total.toFixed(2)}`;
+        cartTotalAmount.innerText = formatPrice(total);
 
         // Add event listeners to buttons in cart
         cartItemsContainer.querySelectorAll('.plus').forEach(b => {
@@ -627,4 +627,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 9. Currency Conversion Helper
+    function formatPrice(usdPrice) {
+        const conversionRate = 83.5;
+        const inrPrice = parseFloat(usdPrice) * conversionRate;
+        return new Intl.NumberFormat('en-IN', {
+            style: 'currency',
+            currency: 'INR',
+            maximumFractionDigits: 0
+        }).format(inrPrice);
+    }
 });
